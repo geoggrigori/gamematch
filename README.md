@@ -1,73 +1,162 @@
-# Welcome to your Lovable project
+# 🎮 TinderGamer - O Tinder para Gamers
 
-## Project info
+Um aplicativo móvel que conecta gamers do mundo todo para jogar juntos! Encontre parceiros de jogo, faça novos amigos e forme equipes incríveis.
 
-**URL**: https://lovable.dev/projects/c2edbe40-88bf-4c7d-894d-c7b63353546f
+## 🚀 Funcionalidades Implementadas (MVP)
 
-## How can I edit this code?
+### ✅ Core Features
+- **Autenticação**: Cadastro e login com email
+- **Perfil Completo**: Nickname, bio, jogos favoritos e contas vinculadas
+- **Matchmaking**: Sistema de swipe estilo Tinder
+- **Chat**: Mensagens em tempo real entre matches
+- **Premium**: Recursos exclusivos e assinaturas
 
-There are several ways of editing your application.
+### 🎨 Design System
+- Cores principais: Azul escuro (#0B1B3D) + Roxo (#6C4CE3)
+- Gradientes gaming personalizados
+- Glassmorphism effects
+- Componentes UI customizados
+- Responsive design para mobile
 
-**Use Lovable**
+### 📱 Funcionalidades Mobile
+- Capacitor configurado para iOS/Android
+- Interface otimizada para toque
+- Navegação móvel intuitiva
+- Preparado para notificações push
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c2edbe40-88bf-4c7d-894d-c7b63353546f) and start prompting.
+## 🛠️ Tecnologias
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React + TypeScript + Vite
+- **UI**: shadcn/ui + Tailwind CSS
+- **Mobile**: Capacitor
+- **Roteamento**: React Router
+- **Icons**: Lucide React
 
-**Use your preferred IDE**
+## 📲 Como Gerar APK para Teste no Celular
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Pré-requisitos
+- Node.js e npm instalados
+- Android Studio (para Android)
+- Xcode (para iOS - apenas no Mac)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Passos para Gerar APK:
 
-Follow these steps:
+1. **Exporte o projeto para GitHub**
+   - Clique no botão "Export to Github" no Lovable
+   - Clone o projeto: `git clone <YOUR_GIT_URL>`
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. **Instale as dependências**
+   ```bash
+   cd <YOUR_PROJECT_NAME>
+   npm install
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. **Adicione as plataformas**
+   ```bash
+   # Para Android
+   npx cap add android
+   
+   # Para iOS (apenas no Mac)
+   npx cap add ios
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+4. **Build do projeto**
+   ```bash
+   npm run build
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+5. **Sincronize com Capacitor**
+   ```bash
+   npx cap sync
+   ```
+
+6. **Execute no dispositivo**
+   ```bash
+   # Android (abre no Android Studio)
+   npx cap run android
+   
+   # iOS (abre no Xcode)
+   npx cap run ios
+   ```
+
+### 📱 Para testar em dispositivo físico:
+- **Android**: Ative o "Modo Desenvolvedor" e "Depuração USB"
+- **iOS**: Configure certificado de desenvolvedor no Xcode
+
+## 🔧 Desenvolvimento Local
+
+```bash
+# Instalar dependências
+npm install
+
+# Executar em modo desenvolvimento
 npm run dev
+
+# Build para produção
+npm run build
 ```
 
-**Edit a file directly in GitHub**
+## 🎯 Próximos Passos para Implementação Completa
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Backend (Requer Supabase)
+Para implementar as funcionalidades completas, você precisará conectar o projeto ao Supabase:
 
-**Use GitHub Codespaces**
+1. Clique no botão verde "Supabase" no topo direito do Lovable
+2. Conecte sua conta Supabase
+3. Isso habilitará:
+   - Autenticação real com email/senha
+   - Banco de dados para perfis e matches
+   - Chat em tempo real
+   - Sistema de notificações
+   - Pagamentos Premium via Stripe
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Recursos Adicionais
+- [ ] Autenticação biométrica
+- [ ] Notificações push
+- [ ] Integração com Discord/Steam/PSN
+- [ ] Sistema de filtros avançados
+- [ ] Geolocalização
+- [ ] Sistema de reports
+- [ ] Analytics de usage
 
-## What technologies are used for this project?
+## 📋 Estrutura do Projeto
 
-This project is built with:
+```
+src/
+├── components/ui/     # Componentes UI base
+├── pages/            # Páginas principais
+│   ├── Index.tsx     # Página inicial
+│   ├── Welcome.tsx   # Login/Cadastro
+│   ├── Profile.tsx   # Perfil do usuário
+│   ├── Swipe.tsx     # Sistema de matchmaking
+│   ├── Chat.tsx      # Chat entre matches
+│   └── Premium.tsx   # Assinatura premium
+├── assets/           # Imagens e recursos
+└── lib/             # Utilitários
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎮 Como Usar o App
 
-## How can I deploy this project?
+1. **Primeiro Acesso**: Crie sua conta na tela de Welcome
+2. **Configure Perfil**: Adicione jogos favoritos e bio
+3. **Comece a Swipe**: Encontre outros gamers
+4. **Chat**: Converse com seus matches
+5. **Premium**: Desbloqueie recursos exclusivos
 
-Simply open [Lovable](https://lovable.dev/projects/c2edbe40-88bf-4c7d-894d-c7b63353546f) and click on Share -> Publish.
+## 📱 Design Responsivo
 
-## Can I connect a custom domain to my Lovable project?
+O app foi otimizado para:
+- Smartphones (principal foco)
+- Tablets
+- Desktop (para desenvolvimento)
 
-Yes, you can!
+## 🔐 Segurança & Privacidade
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- Dados criptografados
+- Conformidade com LGPD
+- Autenticação segura
+- Proteção contra spam
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+**Desenvolvido para conectar a comunidade gamer mundial! 🎮❤️**

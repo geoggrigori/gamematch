@@ -15,6 +15,10 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // TinderGamer custom variants
+        gaming: "gradient-gaming text-white hover:opacity-90 glow-gaming",
+        premium: "bg-gradient-to-r from-gaming-purple to-gaming-blue text-white hover:opacity-90 shadow-lg",
+        swipe: "glass-card text-foreground hover:bg-accent/20 border-accent",
       },
       size: {
         default: "h-10 px-4 py-2",
