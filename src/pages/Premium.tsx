@@ -76,7 +76,7 @@ const Premium = () => {
               <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
-          <h1 className="text-xl font-bold text-white">TinderGamer Premium</h1>
+          <h1 className="text-xl font-bold text-white">GameMatch Premium</h1>
           <div className="w-10"></div>
         </div>
       </div>
@@ -164,7 +164,7 @@ const Premium = () => {
             onClick={handleSubscribe}
           >
             <Crown className="w-5 h-5 mr-2" />
-            Assinar TinderGamer Premium
+            Assinar GameMatch Premium
           </Button>
           
           <p className="text-xs text-muted-foreground text-center">
@@ -178,7 +178,7 @@ const Premium = () => {
           <CardContent className="p-4 text-center">
             <h4 className="font-semibold mb-2">Continue grátis</h4>
             <p className="text-sm text-muted-foreground mb-3">
-              Use o TinderGamer com recursos limitados
+              Use o GameMatch com recursos limitados
             </p>
             <Link to="/swipe">
               <Button variant="outline" className="w-full">

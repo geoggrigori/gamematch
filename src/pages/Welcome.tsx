@@ -28,7 +28,7 @@ const Welcome = () => {
             <div className="p-3 bg-white/20 rounded-2xl backdrop-blur-sm">
               <Gamepad2 className="w-8 h-8 text-white" />
             </div>
-            <h1 className="text-4xl font-bold">TinderGamer</h1>
+            <h1 className="text-4xl font-bold">GameMatch</h1>
           </div>
           
           <h2 className="text-2xl lg:text-3xl font-semibold">
@@ -63,7 +63,7 @@ const Welcome = () => {
               {isLogin ? 'Entrar' : 'Criar Conta'}
             </CardTitle>
             <CardDescription>
-              {isLogin ? 'Acesse sua conta TinderGamer' : 'Junte-se à maior comunidade gamer'}
+              {isLogin ? 'Acesse sua conta GameMatch' : 'Junte-se à maior comunidade gamer'}
             </CardDescription>
           </CardHeader>
           

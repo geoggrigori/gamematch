@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TinderGamer Design System - All colors, gradients, fonts, etc defined here. 
+/* GameMatch Design System - All colors, gradients, fonts, etc defined here. 
 All colors MUST be HSL for theming support.
 Gaming-focused color palette with blue-purple gradients.
 */
 
 @layer base {
   :root {
-    /* TinderGamer Light Theme */
+    /* GameMatch Light Theme */
     --background: 0 0% 98%;
     --foreground: 223 84% 5%;
 
@@ -19,11 +19,11 @@ Gaming-focused color palette with blue-purple gradients.
     --popover: 0 0% 100%;
     --popover-foreground: 223 84% 5%;
 
-    /* Primary: TinderGamer Blue (#0B1B3D) */
+    /* Primary: GameMatch Blue (#0B1B3D) */
     --primary: 223 85% 15%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary: TinderGamer Purple (#6C4CE3) */
+    /* Secondary: GameMatch Purple (#6C4CE3) */
     --secondary: 249 81% 59%;
     --secondary-foreground: 0 0% 100%;
 
@@ -43,7 +43,7 @@ Gaming-focused color palette with blue-purple gradients.
 
     --radius: 0.75rem;
 
-    /* TinderGamer Custom Variables */
+    /* GameMatch Custom Variables */
     --gaming-blue: 223 85% 15%;
     --gaming-purple: 249 81% 59%;
     --gaming-gradient: linear-gradient(135deg, hsl(223, 85%, 15%) 0%, hsl(249, 81%, 59%) 100%);
@@ -53,7 +53,7 @@ Gaming-focused color palette with blue-purple gradients.
   }
 
   .dark {
-    /* TinderGamer Dark Theme */
+    /* GameMatch Dark Theme */
     --background: 223 85% 8%;
     --foreground: 0 0% 95%;
 
@@ -97,7 +97,7 @@ Gaming-focused color palette with blue-purple gradients.
     @apply bg-background text-foreground;
   }
 
-  /* TinderGamer Custom Utilities */
+  /* GameMatch Custom Utilities */
   .gradient-gaming {
     background: var(--gaming-gradient);
   }

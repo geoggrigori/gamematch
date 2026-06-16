@@ -101,7 +101,7 @@ const Chat = () => {
     {
       id: 6,
       senderId: 'me',
-      content: 'É TinderGamer#BR1. Te add lá!',
+      content: 'É GameMatch#BR1. Te add lá!',
       timestamp: '14:37',
       isMe: true
     },

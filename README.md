@@ -1,4 +1,4 @@
-# 🎮 TinderGamer - O Tinder para Gamers
+# 🎮 GameMatch - O match perfeito para gamers
 
 Um aplicativo móvel que conecta gamers do mundo todo para jogar juntos! Encontre parceiros de jogo, faça novos amigos e forme equipes incríveis.
 
@@ -7,7 +7,7 @@ Um aplicativo móvel que conecta gamers do mundo todo para jogar juntos! Encontr
 ### ✅ Core Features
 - **Autenticação**: Cadastro e login com email
 - **Perfil Completo**: Nickname, bio, jogos favoritos e contas vinculadas
-- **Matchmaking**: Sistema de swipe estilo Tinder
+- **Matchmaking**: Sistema de swipe estilo swipe
 - **Chat**: Mensagens em tempo real entre matches
 - **Premium**: Recursos exclusivos e assinaturas
 

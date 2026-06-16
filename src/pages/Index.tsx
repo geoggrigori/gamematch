@@ -9,9 +9,9 @@ const Index = () => {
 
   // Auto redirect to welcome for new users
   useEffect(() => {
-    const hasVisited = localStorage.getItem('tinderGamer_hasVisited');
+    const hasVisited = localStorage.getItem('gamematch_hasVisited');
     if (!hasVisited) {
-      localStorage.setItem('tinderGamer_hasVisited', 'true');
+      localStorage.setItem('gamematch_hasVisited', 'true');
       navigate('/welcome');
     }
   }, [navigate]);
@@ -27,9 +27,9 @@ const Index = () => {
             </div>
           </div>
           
-          <h1 className="text-4xl font-bold mb-2">TinderGamer</h1>
+          <h1 className="text-4xl font-bold mb-2">GameMatch</h1>
           <p className="text-xl text-white/90 mb-8">
-            O Tinder para gamers
+            O match perfeito para gamers
           </p>
         </div>
 
@@ -94,7 +94,7 @@ const Index = () => {
             onClick={() => navigate('/premium')}
           >
             <Crown className="w-4 h-4 mr-2" />
-            TinderGamer Premium
+            GameMatch Premium
           </Button>
         </div>
 
@@ -117,7 +117,7 @@ const Index = () => {
         {/* Footer */}
         <div className="text-center text-white/60 text-xs mt-8">
           <p>Conecte-se com gamers do mundo todo</p>
-          <p className="mt-1">TinderGamer © 2024</p>
+          <p className="mt-1">GameMatch © 2024</p>
         </div>
       </div>
     </div>

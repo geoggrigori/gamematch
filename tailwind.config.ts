@@ -47,7 +47,7 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // TinderGamer custom colors
+        // GameMatch custom colors
         gaming: {
           blue: "hsl(var(--gaming-blue))",
           purple: "hsl(var(--gaming-purple))",

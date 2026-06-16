@@ -123,7 +123,7 @@ const Swipe = () => {
           
           <div className="flex items-center gap-4">
             <div className="text-white text-center">
-              <div className="text-lg font-bold">TinderGamer</div>
+              <div className="text-lg font-bold">GameMatch</div>
               <div className="text-xs opacity-80">{matches} matches hoje</div>
             </div>
           </div>
