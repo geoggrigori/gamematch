@@ -1,0 +1,20 @@
+# Normalize line endings: store as LF, check out native per-OS.
+* text=auto eol=lf
+
+# Windows-only scripts must stay CRLF
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Lockfiles / binaries — never normalize
+bun.lockb      binary
+*.png          binary
+*.jpg          binary
+*.jpeg         binary
+*.gif          binary
+*.webp         binary
+*.ico          binary
+*.pdf          binary
+*.woff         binary
+*.woff2        binary
+*.ttf          binary
