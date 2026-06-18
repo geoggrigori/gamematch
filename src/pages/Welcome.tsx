@@ -90,18 +90,20 @@ const Welcome = () => {
           </p>
 
           {/* Features */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
-            <div className="flex items-center gap-3">
-              <Users className="w-6 h-6 text-secondary" />
-              <span>Match por jogos</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <MessageCircle className="w-6 h-6 text-secondary" />
-              <span>Chat em tempo real</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Trophy className="w-6 h-6 text-secondary" />
-              <span>Encontre sua squad</span>
+          <div className="mt-8 flex justify-center lg:justify-start">
+            <div className="grid w-full max-w-xs grid-cols-1 gap-4 text-left sm:max-w-none sm:grid-cols-3">
+              <div className="flex items-center gap-3">
+                <Users className="h-6 w-6 shrink-0 text-secondary" />
+                <span>Match por jogos</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <MessageCircle className="h-6 w-6 shrink-0 text-secondary" />
+                <span>Chat em tempo real</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Trophy className="h-6 w-6 shrink-0 text-secondary" />
+                <span>Encontre sua squad</span>
+              </div>
             </div>
           </div>
         </div>
