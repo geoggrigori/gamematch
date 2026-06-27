@@ -3,9 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Gamepad2, Users, MessageCircle, Crown, Star } from 'lucide-react';
+import { useAuth } from '@/hooks/useAuth';
 
 const Index = () => {
   const navigate = useNavigate();
+  const { enterDemo } = useAuth();
+
+  // The profile/swipe screens are gated; open them straight into guest mode so
+  // they never dead-end at the login screen.
+  const goDemo = (path: string) => {
+    enterDemo();
+    navigate(path);
+  };
 
   // Auto redirect to welcome for new users
   useEffect(() => {
@@ -35,7 +44,7 @@ const Index = () => {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-3 gap-4 mb-8">
-          <Card className="glass-card border-white/20">
+          <Card className="glass-card border-white/20 !bg-white/10">
             <CardContent className="p-4 text-center">
               <Users className="w-6 h-6 text-white mx-auto mb-2" />
               <div className="text-white font-bold">10k+</div>
@@ -43,7 +52,7 @@ const Index = () => {
             </CardContent>
           </Card>
           
-          <Card className="glass-card border-white/20">
+          <Card className="glass-card border-white/20 !bg-white/10">
             <CardContent className="p-4 text-center">
               <MessageCircle className="w-6 h-6 text-white mx-auto mb-2" />
               <div className="text-white font-bold">50k+</div>
@@ -51,7 +60,7 @@ const Index = () => {
             </CardContent>
           </Card>
           
-          <Card className="glass-card border-white/20">
+          <Card className="glass-card border-white/20 !bg-white/10">
             <CardContent className="p-4 text-center">
               <Star className="w-6 h-6 text-white mx-auto mb-2" />
               <div className="text-white font-bold">4.8</div>
@@ -72,17 +81,17 @@ const Index = () => {
           </Button>
           
           <div className="grid grid-cols-2 gap-3">
-            <Button 
-              variant="swipe" 
+            <Button
+              variant="swipe"
               className="w-full"
-              onClick={() => navigate('/profile')}
+              onClick={() => goDemo('/profile')}
             >
               Ver Perfil
             </Button>
-            <Button 
-              variant="swipe" 
+            <Button
+              variant="swipe"
               className="w-full"
-              onClick={() => navigate('/swipe')}
+              onClick={() => goDemo('/swipe')}
             >
               Explorar
             </Button>

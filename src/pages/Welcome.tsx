@@ -15,8 +15,14 @@ const Welcome = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const { signIn, signUp } = useAuth();
+  const { signIn, signUp, enterDemo } = useAuth();
   const navigate = useNavigate();
+
+  function handleDemo() {
+    enterDemo();
+    toast.success('Você entrou no modo visitante! 🎮');
+    navigate('/swipe');
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -120,6 +126,26 @@ const Welcome = () => {
           </CardHeader>
 
           <CardContent>
+            {/* One-click guest access — no account needed */}
+            <Button
+              type="button"
+              variant="gaming"
+              className="w-full"
+              size="lg"
+              onClick={handleDemo}
+            >
+              🎮 Entrar como visitante
+            </Button>
+            <p className="mt-2 text-center text-xs text-muted-foreground">
+              Acesso instantâneo, sem cadastro — com perfis e chat de exemplo.
+            </p>
+
+            <div className="my-5 flex items-center gap-3 text-xs text-muted-foreground">
+              <span className="h-px flex-1 bg-border" />
+              ou entre com e-mail
+              <span className="h-px flex-1 bg-border" />
+            </div>
+
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <Input

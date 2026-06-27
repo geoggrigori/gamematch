@@ -7,6 +7,7 @@ import { ArrowLeft, Send, Gamepad2, MessageCircle, Heart } from 'lucide-react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { toast } from 'sonner';
 import { supabase } from '@/lib/supabase';
+import { isDemo } from '@/lib/demo';
 import { getMessages, getMyMatches, sendMessage } from '@/lib/api';
 import { useAuth } from '@/hooks/useAuth';
 import type { MatchSummary, Message } from '@/lib/types';
@@ -40,6 +41,9 @@ const Chat = () => {
     getMessages(selected)
       .then((m) => { if (active) setMessages(m); })
       .catch((e) => toast.error(e.message ?? 'Erro ao carregar mensagens'));
+
+    // Demo mode keeps messages in local state — no backend to subscribe to.
+    if (isDemo()) return () => { active = false; };
 
     const channel = supabase
       .channel(`messages:${selected}`)

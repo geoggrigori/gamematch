@@ -7,11 +7,19 @@ import {
 } from "react";
 import type { Session, User } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabase";
+import { DEMO_USER_ID, disableDemo, enableDemo, isDemo } from "@/lib/demo";
+
+/** Minimal stand-in session used while exploring in guest/demo mode. */
+const DEMO_SESSION = {
+  user: { id: DEMO_USER_ID, email: "visitante@gamematch.app" },
+} as unknown as Session;
 
 interface AuthContextValue {
   session: Session | null;
   user: User | null;
   loading: boolean;
+  isDemo: boolean;
+  enterDemo: () => void;
   signUp: (
     email: string,
     password: string,
@@ -25,6 +33,12 @@ const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
+  const [demo, setDemo] = useState<boolean>(isDemo());
+
+  function enterDemo() {
+    enableDemo();
+    setDemo(true);
+  }
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
@@ -52,15 +66,25 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   async function signOut() {
+    if (demo) {
+      disableDemo();
+      setDemo(false);
+    }
     await supabase.auth.signOut();
   }
+
+  // In demo mode a synthetic session keeps protected routes open and gives the
+  // chat a stable "me" id, with no network involved.
+  const effectiveSession = demo ? DEMO_SESSION : session;
 
   return (
     <AuthContext.Provider
       value={{
-        session,
-        user: session?.user ?? null,
-        loading,
+        session: effectiveSession,
+        user: effectiveSession?.user ?? null,
+        loading: demo ? false : loading,
+        isDemo: demo,
+        enterDemo,
         signUp,
         signIn,
         signOut,

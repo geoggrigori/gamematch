@@ -5,7 +5,10 @@ import { isSupabaseConfigured } from "@/lib/supabase";
 
 /** Gate a route behind authentication; redirect to /welcome when signed out. */
 export default function ProtectedRoute({ children }: { children: ReactElement }) {
-  const { session, loading } = useAuth();
+  const { session, loading, isDemo } = useAuth();
+
+  // Guest/demo mode runs entirely on local sample data — always let it through.
+  if (isDemo) return children;
 
   // Without Supabase configured there is no backend yet — send users to the
   // welcome screen instead of letting data-driven pages error out.
