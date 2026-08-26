@@ -1,57 +1,85 @@
-![gamematch](assets/banner.svg)
+<!-- ══════════════════════ IDIOMAS / LANGUAGES ══════════════════════ -->
+<div align="center">
+<a href="README.md"><img src="https://img.shields.io/badge/Português-1987F0?style=for-the-badge" alt="Português"/></a>
+<a href="README.en.md"><img src="https://img.shields.io/badge/English-555555?style=for-the-badge" alt="English"/></a>
+<a href="README.es.md"><img src="https://img.shields.io/badge/Español-555555?style=for-the-badge" alt="Español"/></a>
+</div>
 
-# gamematch
+<!-- ══════════════════════════ CAPA ══════════════════════════ -->
+<div align="center">
+  <img src="assets/banner.svg" width="100%" alt="gamematch"/>
+</div>
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=white)](https://supabase.com/)
-[![Capacitor](https://img.shields.io/badge/Capacitor-119EFF?logo=capacitor&logoColor=white)](https://capacitorjs.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-A855F7.svg)](LICENSE)
+<br/>
 
-**gamematch** is a mobile-first dating-style app for gamers. Instead of browsing endless friend lists, you swipe through other players, like the ones you want to play with, and when the interest is mutual you **match** and can start chatting. Profiles are built around what people actually play — favourite games, the game they're playing right now, location and interests — so the people you meet are people you can squad up with.
+<h1 align="center">gamematch</h1>
+<p align="center"><em>Um app estilo "match" para gamers: deslize, combine e jogue junto</em></p>
+<p align="center"><strong>Perfil por jogo favorito → deck de swipe → match mútuo → chat em tempo real</strong></p>
 
-It's a real full-stack application: a React + TypeScript front-end backed by **Supabase** (Postgres + Auth + Realtime), with all matching logic enforced server-side through SQL functions and Row Level Security. The same web build also ships to **iOS and Android** via Capacitor.
+<div align="center">
 
-![screenshot](assets/screenshot.png)
+<img src="https://img.shields.io/badge/License-All_Rights_Reserved-D32F2F?style=for-the-badge" alt="license"/>
+<img src="https://img.shields.io/badge/iOS_%26_Android-via_Capacitor-000000?style=for-the-badge" alt="mobile"/>
+<br/>
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="typescript"/>
+<img src="https://img.shields.io/badge/React_18-61DAFB?style=flat-square&logo=react&logoColor=black" alt="react"/>
+<img src="https://img.shields.io/badge/Vite_5-646CFF?style=flat-square&logo=vite&logoColor=white" alt="vite"/>
+<img src="https://img.shields.io/badge/Tailwind_CSS-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white" alt="tailwind"/>
+<img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" alt="supabase"/>
+<img src="https://img.shields.io/badge/Capacitor-119EFF?style=flat-square&logo=capacitor&logoColor=white" alt="capacitor"/>
 
-## Features
+</div>
 
-- **Email authentication** — sign up and sign in with email/password through Supabase Auth; sessions persist and refresh automatically.
-- **Auto-provisioned profiles** — a profile row is created automatically on signup (via a database trigger) with a unique username derived from the email.
-- **Editable profiles** — nickname, bio, age, location, avatar emoji, current game, favourite games and interests.
-- **Swipe matchmaking** — a card deck of candidate players you haven't swiped yet. Like, pass or super-like; a mutual like creates a match.
-- **In-deck game filter** — filter the deck by the games most common in the candidate pool to find people playing what you play.
-- **Matches & chat** — every match opens a conversation; messages are stored per match and the matches list shows the latest message.
-- **Premium screen** — a subscription/upgrade page surfacing premium plans and perks.
-- **Protected routes** — profile, swipe and chat are gated behind authentication.
-- **Secure by design** — Row Level Security on every table; swipes, matches and message access are enforced in Postgres, not just in the UI.
-- **Cross-platform** — runs in the browser and as a native iOS/Android app through Capacitor.
+<!-- ══════════════════════════ NAVEGAÇÃO ══════════════════════════ -->
+<div align="center">
 
-## Tech stack
+<a href="#sobre"><img src="https://img.shields.io/badge/▸_SOBRE-1987F0?style=for-the-badge" alt="sobre"/></a>
+<a href="#funcionalidades"><img src="https://img.shields.io/badge/▸_FUNCIONALIDADES-000000?style=for-the-badge" alt="func"/></a>
+<a href="#arquitetura"><img src="https://img.shields.io/badge/▸_ARQUITETURA-1987F0?style=for-the-badge" alt="arquitetura"/></a>
+<a href="#tecnologias"><img src="https://img.shields.io/badge/▸_TECNOLOGIAS-000000?style=for-the-badge" alt="tech"/></a>
+<a href="#configuração"><img src="https://img.shields.io/badge/▸_CONFIGURAÇÃO-1987F0?style=for-the-badge" alt="config"/></a>
+<a href="#build-mobile"><img src="https://img.shields.io/badge/▸_BUILD_MOBILE-000000?style=for-the-badge" alt="mobile"/></a>
 
-| Layer | Technology |
-| --- | --- |
-| Language | TypeScript |
-| UI framework | React 18 |
-| Build tool | Vite 5 (`@vitejs/plugin-react-swc`) |
-| Styling | Tailwind CSS + `tailwindcss-animate` |
-| Components | shadcn/ui (Radix UI primitives) |
-| Routing | React Router |
-| Data fetching | TanStack Query |
-| Icons | Lucide React |
-| Forms / validation | React Hook Form + Zod |
-| Notifications | Sonner |
-| Backend | Supabase (Postgres, Auth, Realtime) |
-| Mobile | Capacitor (iOS / Android) |
+</div>
 
-## Architecture
+<br/>
+
+> ⚠️ **Código fechado.** Este repositório é público apenas para consulta/avaliação — veja a seção [Licença](#licença). Nenhum uso, cópia ou distribuição é permitido sem autorização.
+
+<div align="center">
+  <img src="assets/screenshot.png" width="100%" alt="gamematch screenshot"/>
+</div>
+
+<!-- ══════════════════════════ SOBRE ══════════════════════════ -->
+## Sobre
+
+**gamematch** é um app estilo "dating app" mobile-first para gamers. Em vez de vasculhar listas infinitas de amigos, você desliza (swipe) por outros jogadores, curte quem quer jogar junto e, quando o interesse é mútuo, forma um **match** e pode começar a conversar. Os perfis são construídos em torno do que as pessoas realmente jogam — jogos favoritos, o jogo atual, localização e interesses — pra garantir que quem você encontra é gente pra formar squad.
+
+É uma aplicação full-stack de verdade: front-end em React + TypeScript com **Supabase** (Postgres + Auth + Realtime) no back, com toda a lógica de match garantida no servidor via funções SQL e Row Level Security. O mesmo build web também vira app nativo para **iOS e Android** via Capacitor.
+
+<!-- ══════════════════════════ FUNCIONALIDADES ══════════════════════════ -->
+## Funcionalidades
+
+| Recurso | O que faz |
+|---|---|
+| **Autenticação por e-mail** | Cadastro e login via Supabase Auth; sessão persiste e renova automaticamente |
+| **Perfil auto-provisionado** | Uma linha de perfil é criada automaticamente no cadastro (trigger no banco), com username único derivado do e-mail |
+| **Perfil editável** | Apelido, bio, idade, localização, avatar (emoji), jogo atual, jogos favoritos e interesses |
+| **Swipe / matchmaking** | Deck de cards com candidatos ainda não avaliados. Curtir, passar ou super-like; curtida mútua cria um match |
+| **Filtro de jogo no deck** | Filtra o deck pelos jogos mais comuns no pool de candidatos |
+| **Matches & chat** | Todo match abre uma conversa; mensagens ficam salvas por match, com prévia da última mensagem na lista |
+| **Tela premium** | Página de planos/upgrade com os benefícios premium |
+| **Rotas protegidas** | Perfil, swipe e chat exigem autenticação |
+| **Seguro por design** | Row Level Security em todas as tabelas — swipes, matches e acesso a mensagens são garantidos no Postgres, não só na UI |
+| **Multiplataforma** | Roda no navegador e como app nativo iOS/Android via Capacitor |
+
+<!-- ══════════════════════════ ARQUITETURA ══════════════════════════ -->
+## Arquitetura
 
 ```mermaid
 flowchart LR
-  subgraph Client["React + Vite app (web / iOS / Android)"]
-    UI["Pages: Welcome · Profile · Swipe · Chat · Premium"]
+  subgraph Client["App React + Vite (web / iOS / Android)"]
+    UI["Páginas: Welcome · Profile · Swipe · Chat · Premium"]
     Auth["useAuth (AuthProvider)"]
     API["lib/api.ts"]
   end
@@ -59,8 +87,8 @@ flowchart LR
   subgraph Supabase["Supabase"]
     SAuth["Auth"]
     DB[("Postgres + RLS")]
-    RPC["SQL functions:<br/>record_swipe · get_candidates · get_my_matches"]
-    RT["Realtime (messages)"]
+    RPC["Funções SQL:<br/>record_swipe · get_candidates · get_my_matches"]
+    RT["Realtime (mensagens)"]
   end
 
   UI --> Auth --> SAuth
@@ -70,97 +98,71 @@ flowchart LR
   RT --> UI
 ```
 
-How a match happens: a swipe is sent to the `record_swipe` function, which records the like/pass and, if the other player already liked you back, creates a `matches` row and returns `{ matched: true }`. Candidates come from `get_candidates` (everyone except you and the people you've already swiped), and `get_my_matches` returns each match with the other person's profile and last message.
+Como um match acontece: um swipe é enviado à função `record_swipe`, que registra o like/pass e, se a outra pessoa já tinha curtido antes, cria uma linha em `matches` e retorna `{ matched: true }`. Os candidatos vêm de `get_candidates` (todo mundo exceto você e quem você já avaliou), e `get_my_matches` retorna cada match com o perfil da outra pessoa e a última mensagem.
 
-## Getting started
+<!-- ══════════════════════════ TECNOLOGIAS ══════════════════════════ -->
+## Tecnologias
 
-### Prerequisites
+| Camada | Tecnologia |
+|---|---|
+| Linguagem | TypeScript |
+| UI | React 18, Tailwind CSS + `tailwindcss-animate`, shadcn/ui (Radix UI) |
+| Build | Vite 5 (`@vitejs/plugin-react-swc`) |
+| Roteamento | React Router |
+| Dados | TanStack Query |
+| Formulários | React Hook Form + Zod |
+| Backend | Supabase (Postgres, Auth, Realtime) |
+| Mobile | Capacitor (iOS / Android) |
 
-- Node.js 18+ and npm
-- A free [Supabase](https://supabase.com/) project (for auth, database and realtime)
+<!-- ══════════════════════════ CONFIGURAÇÃO ══════════════════════════ -->
+## Configuração
 
-### 1. Install
+**1. Pré-requisitos:** Node.js 18+, npm, e um projeto [Supabase](https://supabase.com/) gratuito.
 
+**2. Instalar:**
 ```bash
 git clone https://github.com/geoggrigori/gamematch.git
 cd gamematch
 npm install
 ```
 
-### 2. Set up Supabase
+**3. Banco de dados:** no **SQL Editor** do Supabase, rode `supabase/schema.sql` — cria as tabelas `profiles`, `swipes`, `matches`, `messages`, as funções de matching, as políticas de RLS, o trigger de auto-perfil e ativa o Realtime em `messages`.
 
-Create a project at [supabase.com](https://supabase.com/), then open the **SQL Editor** and run the schema once:
-
-```
-supabase/schema.sql
-```
-
-This creates the `profiles`, `swipes`, `matches` and `messages` tables, the matching SQL functions, the Row Level Security policies, the auto-profile trigger, and enables Realtime on `messages`.
-
-### 3. Configure environment variables
-
-Copy the example file and fill in your project's values (found in **Supabase → Project Settings → API**):
-
+**4. Variáveis de ambiente:**
 ```bash
 cp .env.example .env.local
 ```
-
 ```dotenv
-VITE_SUPABASE_URL=https://YOUR-PROJECT-ref.supabase.co
-VITE_SUPABASE_ANON_KEY=YOUR-ANON-PUBLIC-KEY
+VITE_SUPABASE_URL=https://SEU-PROJETO.supabase.co
+VITE_SUPABASE_ANON_KEY=SUA-CHAVE-ANON-PUBLICA
 ```
 
-### 4. Run
+**5. Rodar:**
+```bash
+npm run dev   # http://localhost:8080
+```
+
+<!-- ══════════════════════════ BUILD MOBILE ══════════════════════════ -->
+## Build Mobile
+
+O build web vira app nativo via Capacitor (app id `app.gamematch.mobile`):
 
 ```bash
-npm run dev      # start the dev server (http://localhost:8080)
+npm run build
+npx cap add android   # uma vez
+npx cap add ios       # uma vez, só macOS
+npx cap sync
+npx cap run android
+npx cap run ios       # só macOS
 ```
 
-| Script | Description |
-| --- | --- |
-| `npm run dev` | Start the Vite dev server |
-| `npm run build` | Production build to `dist/` |
-| `npm run build:dev` | Build in development mode |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run ESLint |
+<!-- ══════════════════════════ LICENÇA ══════════════════════════ -->
+## Licença
 
-## Mobile build (Capacitor)
+**Todos os direitos reservados.** Este código é público apenas para visualização/avaliação (portfólio) — **não é open source**. Nenhuma permissão de uso, cópia, modificação ou distribuição é concedida. Veja [`LICENSE`](LICENSE) para o texto completo.
 
-The web build is wrapped as a native app via Capacitor (app id `app.gamematch.mobile`):
+<div align="center">
+  <img src="https://file.loading.io/color/feature/thumb/Blues-8.png?" width="100%" height="10px" alt="divider"/>
+</div>
 
-```bash
-npm run build              # produce dist/ (Capacitor's webDir)
-npx cap add android        # add Android (one time)
-npx cap add ios            # add iOS (one time, macOS only)
-npx cap sync               # copy the web build into the native projects
-npx cap run android        # build & launch on Android
-npx cap run ios            # build & launch on iOS (macOS only)
-```
-
-## Project structure
-
-```
-gamematch/
-├── src/
-│   ├── pages/              # Index, Welcome, Profile, Swipe, Chat, Premium, NotFound
-│   ├── components/
-│   │   ├── ui/             # shadcn/ui component library
-│   │   └── ProtectedRoute.tsx
-│   ├── hooks/
-│   │   └── useAuth.tsx     # auth context (session, signUp, signIn, signOut)
-│   ├── lib/
-│   │   ├── supabase.ts     # Supabase client
-│   │   ├── api.ts          # data access (profiles, swipes, matches, messages)
-│   │   └── types.ts        # shared domain types
-│   ├── App.tsx             # routes & providers
-│   └── main.tsx            # entry point
-├── supabase/
-│   └── schema.sql          # database schema, RLS, functions, triggers
-├── capacitor.config.ts     # native app configuration
-├── index.html
-└── vite.config.ts
-```
-
-## License
-
-Released under the [MIT License](LICENSE).
+<p align="center"><sub>Desenvolvido por <strong><a href="https://github.com/geoggrigori">Grigori</a></strong> · 2026</sub></p>
