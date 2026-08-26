@@ -11,12 +11,6 @@
 </div>
 
 <!-- ══════════════════════════ PORTADA ══════════════════════════ -->
-<div align="center">
-  <img src="assets/banner.svg" width="100%" alt="gamematch"/>
-</div>
-
-<br/>
-
 <h1 align="center">gamematch</h1>
 <p align="center"><em>Un app estilo "dating" para gamers: desliza, haz match y juega en equipo</em></p>
 <p align="center"><strong>Perfil según tus juegos → deck de swipe → match mutuo → chat en tiempo real</strong></p>
