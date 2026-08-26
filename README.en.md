@@ -11,12 +11,6 @@
 </div>
 
 <!-- ══════════════════════════ COVER ══════════════════════════ -->
-<div align="center">
-  <img src="assets/banner.svg" width="100%" alt="gamematch"/>
-</div>
-
-<br/>
-
 <h1 align="center">gamematch</h1>
 <p align="center"><em>A dating-app-style experience for gamers: swipe, match, and squad up</em></p>
 <p align="center"><strong>Profile built around your games → swipe deck → mutual match → realtime chat</strong></p>
