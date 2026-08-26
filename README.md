@@ -10,13 +10,6 @@
 <a href="README.es.md"><img src="https://img.shields.io/badge/Español-555555?style=for-the-badge" alt="Español"/></a>
 </div>
 
-<!-- ══════════════════════════ CAPA ══════════════════════════ -->
-<div align="center">
-  <img src="assets/banner.svg" width="100%" alt="gamematch"/>
-</div>
-
-<br/>
-
 <h1 align="center">gamematch</h1>
 <p align="center"><em>Um app estilo "match" para gamers: deslize, combine e jogue junto</em></p>
 <p align="center"><strong>Perfil por jogo favorito → deck de swipe → match mútuo → chat em tempo real</strong></p>
