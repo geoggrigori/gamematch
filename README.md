@@ -14,10 +14,6 @@
 
 <br/>
 
-<h1 align="center">gamematch</h1>
-<p align="center"><em>Um app estilo "match" para gamers: deslize, combine e jogue junto</em></p>
-<p align="center"><strong>Perfil por jogo favorito → deck de swipe → match mútuo → chat em tempo real</strong></p>
-
 <div align="center">
 
 <img src="https://img.shields.io/badge/License-All_Rights_Reserved-D32F2F?style=for-the-badge" alt="license"/>
