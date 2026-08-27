@@ -15,10 +15,6 @@
 <br/>
 
 <!-- ══════════════════════════ PORTADA ══════════════════════════ -->
-<h1 align="center">gamematch</h1>
-<p align="center"><em>Un app estilo "dating" para gamers: desliza, haz match y juega en equipo</em></p>
-<p align="center"><strong>Perfil según tus juegos → deck de swipe → match mutuo → chat en tiempo real</strong></p>
-
 <div align="center">
 
 <img src="https://img.shields.io/badge/License-All_Rights_Reserved-D32F2F?style=for-the-badge" alt="license"/>
