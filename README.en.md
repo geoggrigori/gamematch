@@ -15,10 +15,6 @@
 <br/>
 
 <!-- ══════════════════════════ COVER ══════════════════════════ -->
-<h1 align="center">gamematch</h1>
-<p align="center"><em>A dating-app-style experience for gamers: swipe, match, and squad up</em></p>
-<p align="center"><strong>Profile built around your games → swipe deck → mutual match → realtime chat</strong></p>
-
 <div align="center">
 
 <img src="https://img.shields.io/badge/License-All_Rights_Reserved-D32F2F?style=for-the-badge" alt="license"/>
