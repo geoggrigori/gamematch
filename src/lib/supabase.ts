@@ -7,7 +7,6 @@ const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
 export const isSupabaseConfigured = Boolean(url && anonKey);
 
 if (!isSupabaseConfigured && typeof window !== "undefined") {
-  // eslint-disable-next-line no-console
   console.warn(
     "Supabase não configurado. Defina VITE_SUPABASE_URL e VITE_SUPABASE_ANON_KEY no .env.local",
   );
